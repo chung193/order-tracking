@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class shipmentDetail extends Model
+class ShipmentDetail extends Model
 {
     use HasFactory;
     use HasUuids;

@@ -2,11 +2,16 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\Merchandise;
+use App\Http\Controllers\Api\Order;
+use App\Http\Controllers\Api\Shipment;
+use App\Http\Controllers\Api\Tracking;
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::get('/user', function (Request $request) {
     return $request->user();
-});
-Route::apiResource('Order', 'Api\Order');
-Route::apiResource('Merchandise', 'Api\Merchandise');
-Route::apiResource('Shipment', 'Api\Shipment');
-Route::apiResource('Tracking', 'Api\Tracking');
+})->middleware('auth:sanctum');
+
+Route::apiResource('order', Order::class);
+Route::apiResource('merchandise', Merchandise::class);
+Route::apiResource('shipment', Shipment::class);
+Route::apiResource('tracking', Tracking::class);

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class trackingDetail extends Model
+class TrackingDetail extends Model
 {
     use HasFactory;
     use HasUuids;
