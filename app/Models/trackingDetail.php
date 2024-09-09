@@ -18,5 +18,5 @@ class trackingDetail extends Model
     public $incrementing = false;
     public $timestamps = true;
     protected $keyType = 'string';
-    protected $fillable = ['shipment_id', 'lat', 'lon', 'position'];
+    protected $fillable = ['merchandise_id'];
 }

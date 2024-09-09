@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->uuid('id');
-            $table->string('name');
-            $table->foreignUuid('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignUuid('shipment_id')->constrained('shipments')->onDelete('cascade');
+            $table->string('class_code');
+            $table->boolean('result');
             $table->primary('id');
             $table->timestamps();
             $table->softDeletes();
