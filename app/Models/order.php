@@ -19,11 +19,7 @@ class Order extends Model
     public $incrementing = false;
     public $timestamps = true;
     protected $keyType = 'string';
-    protected $fillable = ['name', 'user_id'];
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'user_id', 'id');
-    }
+    protected $fillable = ['class_code', 'result', 'shipment_id'];
 
     public function merchandise(): BelongsToMany
     {

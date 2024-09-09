@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('tracking_details', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('lat');
-            $table->string('lon');
-            $table->string('position');
-            $table->foreignUuid('shipment_id')->constrained('shipments')->onDelete('cascade');
+            $table->foreignUuid('merchandise_id')->constrained('merchandises')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

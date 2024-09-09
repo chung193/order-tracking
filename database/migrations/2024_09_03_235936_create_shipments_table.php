@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('shipments', function (Blueprint $table) {
             $table->uuid('id');
-            $table->string('name');
+            $table->string('car_code');
             $table->boolean('is_end');
             $table->timestamps();
             $table->primary('id');

@@ -19,5 +19,5 @@ class Shipment extends Model
     public $incrementing = false;
     public $timestamps = true;
     protected $keyType = 'string';
-    protected $fillable = ['name', 'is_end'];
+    protected $fillable = ['car_code', 'is_end'];
 }
