@@ -19,5 +19,5 @@ class Merchandise extends Model
     public $incrementing = false;
     public $timestamps = true;
     protected $keyType = 'string';
-    protected $fillable = ['code', 'qr_code'];
+    protected $fillable = ['code', 'count'];
 }

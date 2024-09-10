@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('merchandises', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('bar_code');
             $table->string('code');
+            $table->integer('count');
             $table->timestamps();
             $table->softDeletes();
         });

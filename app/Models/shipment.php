@@ -20,4 +20,8 @@ class Shipment extends Model
     public $timestamps = true;
     protected $keyType = 'string';
     protected $fillable = ['car_code', 'is_end'];
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

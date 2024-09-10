@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id');
             $table->foreignUuid('shipment_id')->constrained('shipments')->onDelete('cascade');
             $table->string('class_code');
+            $table->string('address');
             $table->boolean('result');
             $table->primary('id');
             $table->timestamps();

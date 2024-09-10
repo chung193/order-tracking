@@ -19,5 +19,5 @@ class OrderDetail extends Model
     public $incrementing = false;
     public $timestamps = true;
     protected $keyType = 'string';
-    protected $fillable = ['order_id', 'merchandise_id', 'count'];
+    protected $fillable = ['order_id', 'merchandise_id'];
 }

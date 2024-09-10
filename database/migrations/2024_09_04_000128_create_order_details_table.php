@@ -15,7 +15,6 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('order_id')->constrained('orders')->onDelete('cascade');
             $table->foreignUuid('merchandise_id')->constrained('merchandises')->onDelete('cascade');
-            $table->integer('count');
             $table->timestamps();
             $table->softDeletes();
         });

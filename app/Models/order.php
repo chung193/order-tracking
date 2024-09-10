@@ -19,7 +19,7 @@ class Order extends Model
     public $incrementing = false;
     public $timestamps = true;
     protected $keyType = 'string';
-    protected $fillable = ['class_code', 'result', 'shipment_id'];
+    protected $fillable = ['class_code', 'result', 'address', 'shipment_id'];
 
     public function merchandise(): BelongsToMany
     {

@@ -20,6 +20,11 @@ class Merchandise extends Controller
         return $this->sendResponse(MerchandiseResource::collection($data), 'Data retrieved successfully.');
     }
 
+    public function search($key = null)
+    {
+        $data = $key ? Model::where('code', 'like', '%' . $key . '%')->get() : Model::all();
+        return $this->sendResponse(MerchandiseResource::collection($data), 'Data retrieved successfully.');
+    }
 
     /**
      * Store a newly created resource in storage.

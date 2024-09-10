@@ -2,22 +2,29 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\BaseController as Controller;
 use Illuminate\Http\Request;
 use App\Imports\FileImport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Resources\ShipmentResource;
+use App\Models\Shipment as Model;
 
 class Process extends Controller
 {
+    public function data($id = null)
+    {
+        $data = $id ? Model::with('orders.merchandise')->where('id', $id)->get() : Model::with('orders.merchandise')->get();
+        return $this->sendResponse(ShipmentResource::collection($data), 'Data retrieved successfully.');
+    }
     public function loadToDb($filename)
     {
         Excel::import(new FileImport, $filename);
     }
-    //
+
     public function import(Request $request)
     {
-        $file = $request->file('files');
-        if ($request->hasFile('files')) {
+        $file = $request->file('file');
+        if ($request->hasFile('file')) {
             $fileName = $file->getClientOriginalName();
 
             $arr = explode(".", $fileName);
